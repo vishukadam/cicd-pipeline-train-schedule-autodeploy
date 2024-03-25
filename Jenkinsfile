@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'Running build automation'
                 //sh './gradlew build --no-daemon'
-               bat '"./gradlew.bat" build --no-daemon' 
+               bat '"gradlew.bat" build --no-daemon' 
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
