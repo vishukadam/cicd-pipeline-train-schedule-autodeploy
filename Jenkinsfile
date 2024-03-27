@@ -5,11 +5,10 @@ pipeline {
         DOCKER_IMAGE_NAME = "vishukadam29/train-schedule"
     }
     stages {
-        stage('Build') {
+        stage('Build & Test') {
             steps {
-                echo 'Running build automation'
-                //sh './gradlew build --no-daemon'
-               bat 'gradlew.bat build' 
+                echo 'Running build and test automation'
+                sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
